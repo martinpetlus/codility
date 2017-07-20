@@ -7,14 +7,13 @@ function solution(N) {
     if (N % 2 === 1) {
       canCount = true;
       currLength = 0;
-    } else {
-      if (canCount) currLength += 1;
+    } else if (canCount) {
+      currLength += 1;
     }
 
-    if (currLength > maxLength) {
-      maxLength = currLength;
-    }
+    maxLength = Math.max(currLength, maxLength);
 
+    // eslint-disable-next-line no-param-reassign
     N = Math.floor(N / 2);
   }
 
